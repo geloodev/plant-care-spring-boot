@@ -1,15 +1,21 @@
 package com.geloodev.plantcarespringboot;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import lombok.Data;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
+@Data
 public class Plant { 
     
-    Data data;
+    private int id;
 
-    public Plant(Data data) {
-        this.data = data;
-    }
+    @JsonProperty("common_name")
+    private String commonName;
+
+    @JsonProperty("scientific_name")
+    private String scientificName;
 
     public Plant() {}
 }
